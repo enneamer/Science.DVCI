@@ -1,0 +1,33 @@
+[project]
+name = "dvci"
+description = "Data Versioning in Continuous Integration"
+version = "2023.1"
+authors = [
+    { name = "Enneamer", email = "enneamer@enneamer.is" }
+]
+dependencies = [
+    "dvc[s3]",
+    "jinja2",
+    "ruamel.yaml",
+    "rich_click",
+]
+
+[project.optional-dependencies]
+dev = []
+
+[project.scripts]
+dvci = "dvci.__main__:main"
+
+[tool.setuptools]
+include-package-data = true
+packages = [
+    "dvci",
+]
+
+[tool.isort]
+profile = "black"
+src_paths = ["dvci"]
+
+[tool.black]
+line-length = 99
+
